@@ -1,49 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Converter from "./components/Converter/Converter";
 import { useAppDispatch } from "./hooks/useAppDispatch";
+import { useAppSelector } from "./hooks/useAppSelector";
+import { setInputCurrency } from "./store/slices/exchSlice";
+import { fetchExchange } from "./store/thunks/fetchExch";
 import { fetchCurrentLocation } from "./store/thunks/fetchGeo";
 import { getCoords, handleCoordsError } from "./utils/getCoords";
 
 function App() {
   const dispatch = useAppDispatch();
-
-  const [latest, setLatest] = useState({});
+  const { userLocation } = useAppSelector((state) => state.geo);
 
   useEffect(() => {
-    const getLatest = async () => {
-      const latest = await fetch(
-        "https://api.apilayer.com/exchangerates_data/latest",
-        {
-          headers: {
-            apikey: "R2x93LlvSsmaGYIaCzm6RdTM4F6kbS9q",
-          },
-        }
-      );
-      const data = await latest.json();
-      setLatest((prev) => ({ ...prev, ...data.rates }));
-    };
-    getLatest();
-
     navigator.geolocation.getCurrentPosition(
       ({ coords }: any) => {
         const { latitude, longitude } = coords;
-        const position = {latitude, longitude};
-        dispatch(fetchCurrentLocation(position))
+        const position = { latitude, longitude };
+        dispatch(fetchCurrentLocation(position));
       },
       handleCoordsError,
       {
         enableHighAccuracy: true,
       }
     );
+
+    dispatch(fetchExchange());
   }, []);
 
   useEffect(() => {
-    console.log(latest);
-  }, [latest]);
+    dispatch(setInputCurrency(userLocation));
+  }, [userLocation]);
 
   return (
     <div className="container">
-      <Converter latest={latest} />
+      <Converter />
     </div>
   );
 }

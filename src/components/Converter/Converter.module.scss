@@ -4,11 +4,34 @@
   padding: 100px 50px;
   border: 1px solid red;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  &__topRow{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+  &__column{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  &__switch{
+    height: 50px;
+    width: 50px;
+  }
+  &__text{
+    margin: 0;
+  }
 }
 
 .InputConverter{
+  height: 35px;
   max-width: 250px;
   display: flex;
+  border: none;
+  border-radius: 5px;
 }
