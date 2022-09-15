@@ -5,6 +5,8 @@ const initialState: any = {
   targetCurrency: "EUR",
   currencyArray: [],
   amount: 0,
+  inputVal: 0,
+  targetVal: 0,
 };
 
 export const exchSliceReducer = createSlice({
@@ -26,6 +28,9 @@ export const exchSliceReducer = createSlice({
         state.targetCurrency,
       ];
     },
+    setExch(state, action){
+      state.inputVal = action.payload
+    }
   },
 });
 
@@ -34,6 +39,7 @@ export const {
   setInputCurrency,
   setTargetCurrency,
   switchCurrency,
+  setExch,
 } = exchSliceReducer.actions;
 
 export default exchSliceReducer.reducer;

@@ -7,19 +7,22 @@ import {
   setTargetCurrency,
   switchCurrency,
 } from "../../store/slices/exchSlice";
+import { fetchConvert } from "../../store/thunks/fetchExch";
 import CustomizedMenus from "../Menu/Menu";
 import s from "./Converter.module.scss";
 
 const Converter = () => {
-  const { currencyArray, inputCurrency, targetCurrency } = useAppSelector(
+  const { currencyArray, inputCurrency, targetCurrency, inputVal, targetVal} = useAppSelector(
     (state) => state.exch
   );
   const dispatch = useAppDispatch();
   const currency = useInput("", { isEmpty: true, isCurrency: true });
 
   useEffect(() => {
-    console.log(currency.isDirty);
-  }, [currency]);
+    if(currency.val) {
+      dispatch(fetchConvert(targetCurrency, inputCurrency, currency.val))
+    };
+  }, [currency.val, targetCurrency, inputCurrency]);
 
   return (
     <section className={s.converter}>
@@ -67,29 +70,9 @@ const Converter = () => {
           <p className={s.converter__text}>Result</p>
           <p
             className={s.converter__text}
-          >{`1.00 ${inputCurrency} = 0.99966254 ${targetCurrency}`}</p>
+          >{`${currency.val} ${inputCurrency} = ${inputVal} ${targetCurrency}`}</p>
         </div>
       </div>
-      {/* <div className={s.InputConverter}>
-        <input type="text" className={s.InputConverter} />
-        <CustomizedMenus
-          onSelect={(e: any) =>
-            dispatch(setInputCurrency(e.currentTarget.textContent))
-          }
-          currencyArray={currencyArray}
-          currency={inputCurrency}
-        />
-      </div>
-      <div className={s.InputConverter}>
-        <input type="text" className={s.InputConverter} />
-        <CustomizedMenus
-          onSelect={(e: any) =>
-            dispatch(setTargetCurrency(e.currentTarget.textContent))
-          }
-          currencyArray={currencyArray}
-          currency={targetCurrency}
-        />
-      </div> */}
     </section>
   );
 };
