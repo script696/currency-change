@@ -17,14 +17,14 @@ const Converter = () => {
   const dispatch = useAppDispatch();
   const currency = useInput(0, { isEmpty: true, isCurrency: true });
 
-  // useEffect(() => {
-  //   const timeOutId = setTimeout(() => {
-  //     if (currency.val) {
-  //       dispatch(fetchConvert(targetCurrency, inputCurrency, currency.val));
-  //     }
-  //   }, 500);
-  //   return () => clearTimeout(timeOutId);
-  // }, [currency.val, targetCurrency, inputCurrency]);
+  useEffect(() => {
+    const timeOutId = setTimeout(() => {
+      if (currency.val) {
+        dispatch(fetchConvert(targetCurrency, inputCurrency, currency.val));
+      }
+    }, 500);
+    return () => clearTimeout(timeOutId);
+  }, [currency.val, targetCurrency, inputCurrency]);
 
   return (
     <section className={s.converter}>
