@@ -1,4 +1,4 @@
-import { useState, FormEvent } from "react";
+import { useState, ChangeEvent } from "react";
 import useValidation from "./useValidation";
 
 const useInput = (initialVal: any, validations: any) => {
@@ -6,11 +6,11 @@ const useInput = (initialVal: any, validations: any) => {
   const valid = useValidation(val, validations);
   const [isDirty, setIsDirty] = useState(false);
 
-  const onChange = (e: any) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setVal(e.target.value);
   };
 
-  const onBlur = (e: any) => {
+  const onBlur = () => {
     setIsDirty(true);
   };
   return { val, onChange, onBlur, isDirty, valid };

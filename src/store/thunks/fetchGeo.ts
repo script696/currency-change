@@ -3,7 +3,7 @@ import { geoSliceReducer } from "../slices/geoSlice";
 import { AppDispatch } from "../store";
 
 export const fetchCurrentLocation =
-  ({ latitude, longitude }: any) =>
+  ({ latitude, longitude }: { latitude: string; longitude: string }) =>
   async (dispatch: AppDispatch) => {
     try {
       const res = await GeoService.getLoc(longitude, latitude);
