@@ -8,35 +8,45 @@
   justify-content: space-between;
   align-items: center;
   gap: 50px;
-  &__topRow{
+  &__topRow {
     display: flex;
     align-items: center;
     gap: 50px;
   }
-  &__column{
+  &__column {
+    position: relative;
     height: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 10px;
   }
-  &__switch{
+  &__switch {
     height: 50px;
     width: 50px;
-    background: url('../../assets/logo/arrows.svg') center / 30% no-repeat;
+    background: url("../../assets/logo/arrows.svg") center / 30% no-repeat;
     border: 1px solid rgb(77, 73, 73);
-    border-radius:  50%;
+    border-radius: 50%;
     cursor: pointer;
   }
-  &__text{
+  &__text {
     margin: 0;
   }
 }
 
-.InputConverter{
+.InputConverter {
   height: 35px;
   max-width: 250px;
   display: flex;
   border: none;
   border-radius: 5px;
+  &__err {
+    width: 100%;
+    color: red;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+  }
 }
