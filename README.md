@@ -1,46 +1,98 @@
-# Getting Started with Create React App
+<br/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h1 align="center">Проект Weatherly</h3>
 
-## Available Scripts
+  <p align="center">
+    Приложение 'Прогноз погоды'
+    <br/>
+    <br/>
+   
+  </p>
 
-In the project directory, you can run:
+
+<table >
+  <tr >
+    <td width="33%">
+      <a align="center" href="https://script696.github.io/weatherly/" target="_blank">Посмотреть этот проект</a>
+    </td>
+  </tr>
+</table>
+
+# О проекте
+<p >
+    <br/>
+</p>
+
+![Screen Shot](https://script696.github.io/currency-change/)
+
+
+конвертер валют - приложение, выполненное по тестовому заданию:
+'Напишите SPA для конвертирования валют. Для получения текущих курсов найдите и используйте любое отрытое API.
+🎯  Цель приложения:
+Дать пользователю возможность конвертировать из одной валюты в другую.
+
+📝 Описание:
+1. Приложение должно состоять из:
+  a. поле для ввода суммы в валюте, из которой конвертирует пользователь (базовой)
+  b. выбор базовой и целевой валюты (в которую конвертирует пользователь)
+  c. поле результата
+2. По умолчанию у пользователя должна определяться базовая валюта, соответствующая локали браузера.
+3. Конвертация должна происходить сразу после ввода суммы в базовой валюте, на лету.
+
+🔥  Плюсом будет:
+
+Хорошо продуманный интерфейс и внешний вид
+Качественная архитектура приложения
+✅ Решением задания является ссылка на публичный git репозиторий c исходным кодом и инструкцией по запуску приложения.'
+     
+
+
+## Использованные технологии
+
+- React 
+- TypeScript
+- SCSS 
+- Redux Toolkit
+- Синтаксис ES6
+- REST API
+- navigator API
+- Webpack
+- Проект подключен к серверу и размещен в интернете с использованием GitHub Pages
+
+## Установка
+
+## 1. Клонируйте репозиторий командой:
+
+### `git@github.com:script696/currency-change.git`
+
+## 2. Установите пакеты командой:
+
+### `npm i`
+
+## 3. Доступные скрипты:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Запуск приложения в режиме разработки.\
+Откройте [http://localhost:3000](http://localhost:3000) чтобы увидеть результат в браузере.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Страница обновится автоматически при внесении изменений.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Как это можно использовать
 
-### `npm run build`
+1. При первом заходе на страницу у вас будет запрошено разрешение на доступ к вашей геолокации
+2. В случае подтверждения разрешения, приложение определит ваше текущее местоположение и выставит изначальную валюту в зависимости от вашего региона
+3. В левой части приложения размещено поле ввода необходимого кол-ва условных единиц для обмена
+4. Введите необходимое количество используя цифры, допускается одна точка-разделитель для указания дробных значений
+5. Два выпадающих меню выбора служат для установки начальной и целевой валют 
+6. Кнопка со стрелками между меню позволяет переключать валюты
+7. В нижней части экрана отображается результат конвертации
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Что планируется улучшить
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+На данный момент улучшений не планируется
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Авторы
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* **Никита Семенов** - *Web Developer* - [Никита Семенов](http://niksemenov.ru/) - **
