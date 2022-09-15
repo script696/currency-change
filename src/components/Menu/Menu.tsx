@@ -4,11 +4,18 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
 
+interface Imenu {
+  currencyArray: Array<string>
+  currency: string
+  onSelect: (e : any) => void
+}
+
+
 export default function MenuPopupState({
   currencyArray,
   currency,
   onSelect,
-}: any) {
+}: Imenu) {
   return (
     <PopupState variant="popover" popupId="demo-popup-menu">
       {(popupState) => (

@@ -11,7 +11,7 @@ export const BASE_URL_GEO = `https://geocode-maps.yandex.ru/1.x
 
 export const BASE_URL_EXCH = `https://api.apilayer.com/exchangerates_data`;
 
-export const GEO_TO_EXCH : any = {
+export const GEO_TO_EXCH : {[key : string] : string} = {
   AED: "AED",
   AFN: "AFN",
   ALL: "ALL",

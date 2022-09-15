@@ -10,7 +10,7 @@ export class ExchangeService {
       },
     });
   }
-  static getConvert(to: string, from : string, amount: any): Promise<any> {
+  static getConvert(to: string, from : string, amount: number): Promise<any> {
     return fetch(`${BASE_URL_EXCH}/convert?to=${to}&from=${from}&amount=${amount}`, {
       headers: {
         apikey: EXCHANGE_APIKEY,

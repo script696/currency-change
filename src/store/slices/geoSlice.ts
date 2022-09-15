@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState: any = {
+
+
+
+const initialState: {userLocation : string} = {
   userLocation: "",
 };
 

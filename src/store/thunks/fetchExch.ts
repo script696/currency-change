@@ -12,7 +12,7 @@ export const fetchExchange = () => async (dispatch: AppDispatch) => {
 
       dispatch(exchSliceReducer.actions.setCurrency(data.rates));
     } else {
-      console.log("false");
+      console.log("error");
     }
   } catch (error) {
     console.log(error);
@@ -20,18 +20,16 @@ export const fetchExchange = () => async (dispatch: AppDispatch) => {
 };
 
 export const fetchConvert =
-  ( from : string, to: string, amout : any ) =>
+  ( from : string, to: string, amout : number ) =>
   async (dispatch: AppDispatch) => {
     try {
       const res = await ExchangeService.getConvert( from, to, amout );
       const data = await res.json();
 
       if (res.status === 200) {
-        console.log(data);
-
         dispatch(exchSliceReducer.actions.setExch(data.result));
       } else {
-        console.log("false");
+        console.log("error");
       }
     } catch (error) {
       console.log(error);

@@ -1,5 +1,7 @@
 @import "~normalize.css";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+
 
 *,
 *::before,
@@ -9,13 +11,11 @@
 
 body {
   height: 100vh;
-  background: linear-gradient(
-      180deg,
-      rgba(129, 217, 244, 0.6) 0%,
-      rgba(33, 123, 245, 0.6) 100%
-    ),
-    #ffffff;
-  font-family: "Roboto", sans-serif;
+  background-image: linear-gradient(104deg, #111213 0%, #323234 100%);
+
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  color: #fff;
 }
 
 .container {
