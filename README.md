@@ -1,9 +1,9 @@
 <br/>
 
-  <h1 align="center">Проект Weatherly</h3>
+  <h1 align="center">Проект Currency-Change</h3>
 
   <p align="center">
-    Приложение 'Прогноз погоды'
+    Приложение 'Конвертер валют'
     <br/>
     <br/>
    
