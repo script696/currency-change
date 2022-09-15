@@ -8,6 +8,7 @@ export const fetchExchange = () => async (dispatch: AppDispatch) => {
     const data = await res.json();
 
     if (res.status === 200) {
+      console.log(data.rates)
       
       dispatch(exchSliceReducer.actions.setCurrency(data.rates))
     } else {
