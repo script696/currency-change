@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: any = {
-  inputCurrency: "",
+  inputCurrency: "USD",
   targetCurrency: "EUR",
   currencyArray: [],
+  amount: 0,
 };
 
 export const exchSliceReducer = createSlice({
@@ -19,9 +20,20 @@ export const exchSliceReducer = createSlice({
     setCurrency(state, action) {
       state.currencyArray = [...Object.keys(action.payload)];
     },
+    switchCurrency(state) {
+      [state.targetCurrency, state.inputCurrency] = [
+        state.inputCurrency,
+        state.targetCurrency,
+      ];
+    },
   },
 });
 
-export const { setCurrency,setInputCurrency, setTargetCurrency } = exchSliceReducer.actions;
+export const {
+  setCurrency,
+  setInputCurrency,
+  setTargetCurrency,
+  switchCurrency,
+} = exchSliceReducer.actions;
 
 export default exchSliceReducer.reducer;

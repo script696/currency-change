@@ -5,6 +5,7 @@ import { useAppSelector } from "./hooks/useAppSelector";
 import { setInputCurrency } from "./store/slices/exchSlice";
 import { fetchExchange } from "./store/thunks/fetchExch";
 import { fetchCurrentLocation } from "./store/thunks/fetchGeo";
+import { GEO_TO_EXCH } from "./utils/constants";
 import { getCoords, handleCoordsError } from "./utils/getCoords";
 
 function App() {
@@ -28,7 +29,8 @@ function App() {
   }, []);
 
   useEffect(() => {
-    dispatch(setInputCurrency(userLocation));
+    
+    if(userLocation) dispatch(setInputCurrency(GEO_TO_EXCH[userLocation]));
   }, [userLocation]);
 
   return (

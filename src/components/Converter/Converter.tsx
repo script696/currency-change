@@ -4,6 +4,7 @@ import { useAppSelector } from "../../hooks/useAppSelector";
 import {
   setInputCurrency,
   setTargetCurrency,
+  switchCurrency,
 } from "../../store/slices/exchSlice";
 import CustomizedMenus from "../Menu/Menu";
 import s from "./Converter.module.scss";
@@ -31,7 +32,10 @@ const Converter = () => {
             currency={inputCurrency}
           />
         </div>
-        <button className={s.converter__switch}></button>
+        <button 
+        onClick={()=> dispatch(switchCurrency())}
+        className={s.converter__switch}
+        ></button>
         <div className={s.converter__column}>
           <p className={s.converter__text}>To</p>
           <CustomizedMenus
@@ -46,7 +50,7 @@ const Converter = () => {
       <div className={s.converter__bottomRow}>
         <div className={s.converter__column}>
           <p className={s.converter__text}>Result</p>
-          <p className={s.converter__text}>1.00 US Dollar = 0.99966254 Euros</p>
+          <p className={s.converter__text}>{`1.00 ${inputCurrency} = 0.99966254 ${targetCurrency}`}</p>
         </div>
       </div>
       {/* <div className={s.InputConverter}>
